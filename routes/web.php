@@ -10,6 +10,7 @@ use App\Http\Controllers\Panel\EditorUploadController;
 use App\Http\Controllers\Panel\PostController;
 use App\Http\Controllers\Panel\ProfileController;
 use App\Http\Controllers\Panel\UserController;
+use App\Http\Controllers\SearchPostController;
 use App\Http\Controllers\ShowPostCategoryController;
 use App\Http\Controllers\ShowPostController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,9 @@ Route::get('post/{post:slug}', [ShowPostController::class, 'show'])->name('post.
 
 //Show Posts by Category
 Route::get('category/{category:slug}', [ShowPostCategoryController::class, 'show'])->name('categoryPost.show');
+
+//Search Post
+Route::get('/search', [SearchPostController::class, 'show'])->name('search.show');
 
 //Landing Comment
 Route::middleware(['auth'])->post('/comment', [LandingCommentController::class, 'store'])->name('comment.store');

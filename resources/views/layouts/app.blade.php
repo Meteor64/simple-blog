@@ -25,8 +25,9 @@
                     <a href="{{ route('landing') }}" class="logo__img"></a>
                 </div>
                 <div class="c-search width-100 ">
-                    <form action="" class="c-search__form position-relative">
-                        <input type="text" class="c-search__input" placeholder="جستجو کنید">
+                    <form action="{{ route('search.show') }}" class="c-search__form position-relative">
+                        <input type="text" class="c-search__input" placeholder="جستجو کنید" name="search"
+                               value="{{ request()->search }}">
                         <button class="c-search__button"></button>
                     </form>
                 </div>

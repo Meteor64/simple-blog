@@ -9,7 +9,7 @@
                     <div class="articles__item">
                         <a href="{{ route('post.show',$post->slug) }}" class="articles__link">
                             <div class="articles__img">
-                                <img src="{{ $post->getBannerUrl() }}" class="articles__img-src" >
+                                <img src="{{ $post->getBannerUrl() }}" class="articles__img-src">
                             </div>
                             <div class="articles__title">
                                 <h2>{{ $post->title }} </h2>
@@ -30,7 +30,7 @@
             </div>
         </article>
         <div class="pagination">
-            {{ $posts->links() }}
+            {{ $posts->appends(request()->query())->links() }}
         </div>
     </main>
 </x-app-layout>
